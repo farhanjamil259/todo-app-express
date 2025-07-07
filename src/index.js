@@ -3,10 +3,12 @@ import router from "./routes/authRouter.js";
 import connectDB from "./connectDB.js";
 import todoRouter from "./routes/todoRouter.js";
 import authenticateUser from "./middleware/authenticateUser.js";
+import cors from "cors";
 
 const app = express();
 
 app.use(express.json());
+app.use(cors());
 
 connectDB();
 

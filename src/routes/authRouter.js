@@ -27,12 +27,11 @@ router.post("/login", async (req, res) => {
 
   const token = jwt.sign(foundUser.toObject(), process.env.SECRET);
 
+
   res.status(201).json({
     user: foundUser,
     token: token,
   });
-
-  res.status(200).json(foundUser);
 });
 
 router.post("/register", async (req, res) => {
